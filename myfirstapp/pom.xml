@@ -47,6 +47,11 @@
             <artifactId>spring-boot-devtools</artifactId>
             <version>3.3.0</version>
         </dependency>
+        <!--ADD SUPPORT FOR SPRING BOOT ACTUATOR-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
