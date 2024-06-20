@@ -48,12 +48,18 @@
             <version>3.3.0</version>
         </dependency>
     </dependencies>
-
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.0.6</version>
             </plugin>
         </plugins>
     </build>
