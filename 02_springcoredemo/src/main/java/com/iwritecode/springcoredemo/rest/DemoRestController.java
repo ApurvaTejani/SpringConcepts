@@ -13,11 +13,27 @@ public class DemoRestController {
 
 @Autowired
     public DemoRestController(@Qualifier("footBallCoach") Coach c){
+    this.myCoach=c;
+    System.out.println(myCoach);
+    }
+@Autowired
+    public void setMyCoach(@Qualifier("cricketCoach") Coach c)
+    {
         this.myCoach=c;
+        System.out.println(myCoach);
     }
 
-    @GetMapping("/advice")
-    public String Advice(){
+    @GetMapping("/advice/constructor")
+    public String giveMeAdvice(){
         return myCoach.getAdvice();
+    }
+
+    public Coach getMyCoach() {
+        return myCoach;
+    }
+
+    @GetMapping("/adivce/setters")
+    public String giveMeSomeAdice(){
+    return getMyCoach().getAdvice();
     }
 }
