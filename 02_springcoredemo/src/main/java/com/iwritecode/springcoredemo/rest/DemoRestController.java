@@ -12,7 +12,7 @@ public class DemoRestController {
     private Coach myCoach;
 
 @Autowired
-    public DemoRestController(@Qualifier("footBallCoach") Coach c){
+    public DemoRestController(@Qualifier("footBallCoach")Coach c){
     this.myCoach=c;
     System.out.println(myCoach);
     }
@@ -23,17 +23,15 @@ public class DemoRestController {
         System.out.println(myCoach);
     }
 
-    @GetMapping("/advice/constructor")
+    @GetMapping("/advice")
     public String giveMeAdvice(){
         return myCoach.getAdvice();
     }
 
+    //Setters >>> Qualifier of Constructor  >>>> Primary Anno
     public Coach getMyCoach() {
         return myCoach;
     }
 
-    @GetMapping("/adivce/setters")
-    public String giveMeSomeAdice(){
-    return getMyCoach().getAdvice();
-    }
+
 }

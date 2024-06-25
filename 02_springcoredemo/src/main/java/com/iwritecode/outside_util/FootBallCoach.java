@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 public class FootBallCoach implements Coach {
     @Override
     public String getAdvice() {
+
         return "Practice Goal for 10 mins";
     }
 }
