@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 //Making this Bean Scope as prototype
 @Component
 @Lazy
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+//@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class FootBallCoach implements Coach {
     public FootBallCoach() {
 

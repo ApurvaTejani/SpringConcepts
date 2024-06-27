@@ -20,6 +20,7 @@ public class TestScopeController {
 //    System.out.println(c1+"  "+c2);
     @GetMapping("/check")
     public String getBeanScopeCheck(){
+        System.out.println("If true then Singelon, if false then Prototype -->"+(c1==c2));
         return  c1+ "<br>"+c2;
     }
 }
