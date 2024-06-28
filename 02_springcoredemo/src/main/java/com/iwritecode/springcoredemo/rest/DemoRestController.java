@@ -14,13 +14,13 @@ public class DemoRestController {
 @Autowired
     public DemoRestController(@Qualifier("footBallCoach")Coach c){
     this.myCoach=c;
-    System.out.println("Dependency Injection of "+myCoach.getClass());
+    System.out.println("Constrcutor DI "+myCoach.getClass());
     }
 @Autowired
     public void setMyCoach(@Qualifier("cricketCoach") Coach c)
     {
         this.myCoach=c;
-        System.out.println("Dependency Injection of "+myCoach.getClass());
+        System.out.println("Setter DI  "+myCoach.getClass());
     }
 
     @GetMapping("/advice")

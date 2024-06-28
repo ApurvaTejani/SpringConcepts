@@ -1,11 +1,9 @@
 package com.iwritecode.outside_util;
 
 import com.iwritecode.springcoredemo.common.Coach;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-//Making this Bean Scope as prototype
+//Making this Bean Scope as prototype and using this class outside the package
 @Component
 @Lazy
 //@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)

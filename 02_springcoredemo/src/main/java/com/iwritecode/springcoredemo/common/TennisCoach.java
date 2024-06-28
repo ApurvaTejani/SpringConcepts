@@ -2,10 +2,9 @@ package com.iwritecode.springcoredemo.common;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
-
+// Use Case of Startup and CleanUp stuff and Primary anno
 @Component
 @Primary
 public class TennisCoach implements Coach{
