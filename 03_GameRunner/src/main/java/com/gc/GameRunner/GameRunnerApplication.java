@@ -4,6 +4,10 @@ import com.gc.GameRunner.Version1.GameRunner_v1;
 import com.gc.GameRunner.Version1.SuperContra;
 import com.gc.GameRunner.Version2.GameRunner_v2;
 import com.gc.GameRunner.Version2.MarioGame;
+import com.gc.GameRunner.Version3.GameConfig;
+import com.gc.GameRunner.Version3.GameRunner_v3;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 public class GameRunnerApplication {
     public static void main(String[] args) {
@@ -17,7 +21,11 @@ public class GameRunnerApplication {
         GameRunner_v2 v2 = new GameRunner_v2(marioGame); // Object Creation + Wiring of Dependencies i.e DI
         v2.run();
 
-
+        // Version3 - With Game Config class it gets more complicated
+        AnnotationConfigApplicationContext ap = new AnnotationConfigApplicationContext(GameConfig.class);
+        ap.getBean("setTicTacToe");
+        GameRunner_v3 v3=(GameRunner_v3) ap.getBean("plugGame1");
+        v3.run();
 
 
     }
