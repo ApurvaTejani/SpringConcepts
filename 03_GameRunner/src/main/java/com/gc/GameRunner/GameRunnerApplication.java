@@ -6,9 +6,16 @@ import com.gc.GameRunner.Version2.GameRunner_v2;
 import com.gc.GameRunner.Version2.MarioGame;
 import com.gc.GameRunner.Version3.GameConfig;
 import com.gc.GameRunner.Version3.GameRunner_v3;
+import com.gc.GameRunner.Version4.GameRunner_v4;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
+
+@Component
+@Configuration
+@ComponentScan("com.gc.GameRunner.Version4")
 public class GameRunnerApplication {
     public static void main(String[] args) {
 
@@ -27,6 +34,10 @@ public class GameRunnerApplication {
         GameRunner_v3 v3=(GameRunner_v3) ap.getBean("plugGame1");
         v3.run();
 
+
+
+        AnnotationConfigApplicationContext ap1 = new AnnotationConfigApplicationContext(GameRunnerApplication.class);
+        ap1.getBean(GameRunner_v4.class).run();
 
     }
 }
