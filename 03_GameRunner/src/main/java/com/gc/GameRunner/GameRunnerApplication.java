@@ -28,14 +28,14 @@ public class GameRunnerApplication {
         GameRunner_v2 v2 = new GameRunner_v2(marioGame); // Object Creation + Wiring of Dependencies i.e DI
         v2.run();
 
-        // Version3 - With Game Config class it gets more complicated
+        // Version3 - With Game Config class it gets more complicated, still creating Objects
         AnnotationConfigApplicationContext ap = new AnnotationConfigApplicationContext(GameConfig.class);
         ap.getBean("setTicTacToe");
         GameRunner_v3 v3=(GameRunner_v3) ap.getBean("plugGame1");
         v3.run();
 
 
-
+        // Version4 - Componenet Scan and Autowiring - No need of creating object or beaens / No need of dependency injection
         AnnotationConfigApplicationContext ap1 = new AnnotationConfigApplicationContext(GameRunnerApplication.class);
         ap1.getBean(GameRunner_v4.class).run();
 
